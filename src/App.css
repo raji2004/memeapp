@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Karla", sans-serif;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  padding: 36px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.s {
+  max-width: 1026px;
+  width: 100%;
+}
+.header {
+  max-width: 1026px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
   color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.header--image {
+  height: 100%;
+  margin-right: 6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header--title {
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+.header--project {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.form {
+  max-width: 1026px;
+  width: 100%;
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+  margin-bottom: 17px;
+}
+
+.form--input {
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  border: 1px solid #d5d4d8;
+  text-indent: 5px;
+}
+.error {
+  grid-column: 1/ -1;
+  text-align: center;
+  background-image: linear-gradient(40deg, #5b0b0b, #f44e4e);
+  background-size: 100%;
+  background-clip: text;
+  font-size: 100%;
+  -webkit-text-fill-color: transparent;
+}
+
+.form--button {
+  grid-column: 1 / -1;
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+}
+.form--buton {
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.meme {
+  position: relative;
+}
+
+.meme--image {
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.meme--text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
+}
+@media screen and (max-width: 500px) {
+  .s {
+    max-width: 500px;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .header {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .form {
+    max-width: 500px;
+    width: 100%;
+  }
+  .meme {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .s {
+    max-width: 360px;
+    width: 100%;
+  }
+  .header {
+    max-width: 360px !important;
+    width: 100% !important;
+  }
+
+  .form {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .form--input {
+    height: 40px;
+    border-radius: 12px;
+  }
+  .form--buton {
+    height: 40px;
+    border-radius: 12px;
+  }
+  .meme {
+    max-width: 360px;
+    width: 100%;
   }
 }
