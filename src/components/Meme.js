@@ -10,7 +10,14 @@ export default function Meme() {
   const [Error, setError] = useState("");
   const [allMemes, setAllMemes] = useState([]);
   //"image/jpeg" or "image/png"
-
+  const [size, setsize] = useState("");
+  const [color, setcolor] = useState("");
+  function colorchange(e) {
+    setcolor(e.target.value);
+  }
+  function Textsize(event) {
+    setsize(event.target.value + "px");
+  }
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((res) => res.json())
@@ -68,6 +75,20 @@ export default function Meme() {
           Download image
         </button>
         <input
+          type="number"
+          name="size"
+          className="form--buon"
+          placeholder="textsize"
+          onChange={Textsize}
+        />
+        <input
+          type="color"
+          name="color"
+          className="form--buon"
+          onChange={colorchange}
+        />
+        <input
+          id="me"
           type="file"
           name="myImage"
           className="form--buton"
@@ -103,8 +124,18 @@ export default function Meme() {
           alt="p"
           className="meme--image"
         />
-        <h2 className="meme--text top">{meme.topText}</h2>
-        <h2 className="meme--text bottom">{meme.bottomText}</h2>
+        <h2
+          className="meme--text top"
+          style={{ fontSize: size ? size : "", color: color ? color : "" }}
+        >
+          {meme.topText}
+        </h2>
+        <h2
+          className="meme--text bottom"
+          style={{ fontSize: size ? size : "" }}
+        >
+          {meme.bottomText}
+        </h2>
       </div>
     </main>
   );

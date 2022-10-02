@@ -44,7 +44,7 @@ main {
   max-width: 1026px;
   width: 100%;
   display: grid;
-  grid-template: 40px 40px / 1fr 1fr;
+  grid-template: 40px 40px / 3fr 3fr;
   gap: 17px;
   margin-bottom: 17px;
 }
@@ -75,11 +75,21 @@ main {
   height: 40px;
   cursor: pointer;
 }
+
 .form--buton {
   font-family: "Karla", sans-serif;
   border-radius: 5px;
   background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
   color: white;
+  border: none;
+  cursor: pointer;
+}
+.form--buon {
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  height: 34px;
   border: none;
   cursor: pointer;
 }
