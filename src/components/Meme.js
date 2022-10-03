@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { toPng } from "dom-to-image";
+import Draggable from "react-draggable";
 export default function Meme() {
   const [meme, setMeme] = useState({
     topText: "",
@@ -14,6 +15,10 @@ export default function Meme() {
   const [color, setcolor] = useState("");
   function colorchange(e) {
     setcolor(e.target.value);
+  }
+
+  function Drag(event) {
+    console.log(event.target);
   }
   function Textsize(event) {
     setsize(event.target.value + "px");
@@ -124,18 +129,28 @@ export default function Meme() {
           alt="p"
           className="meme--image"
         />
-        <h2
-          className="meme--text top"
-          style={{ fontSize: size ? size : "", color: color ? color : "" }}
-        >
-          {meme.topText}
-        </h2>
-        <h2
-          className="meme--text bottom"
-          style={{ fontSize: size ? size : "" }}
-        >
-          {meme.bottomText}
-        </h2>
+        <Draggable>
+          <h2
+            className="meme--text top"
+            onDragMove={Drag}
+            style={{
+              fontSize: size ? size : "",
+              color: color ? color : "",
+              position: "absolute",
+              top: "0",
+            }}
+          >
+            {meme.topText}
+          </h2>
+        </Draggable>
+        <Draggable>
+          <h2
+            className="meme--text bottom"
+            style={{ fontSize: size ? size : "" }}
+          >
+            {meme.bottomText}
+          </h2>
+        </Draggable>
       </div>
     </main>
   );
